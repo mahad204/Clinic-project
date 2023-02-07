@@ -1,62 +1,47 @@
-import { Avatar, Card, CardActions, CardContent, CardHeader, CardMedia, IconButton, Typography } from '@mui/material'
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import FavoriteIcon from '@mui/icons-material/Favorite';
+import {  Card, CardActions, CardContent, CardHeader, CardMedia, IconButton, Typography } from '@mui/material';
+// import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
-import { red } from '@mui/material/colors';
 import React from 'react'
 
 import docImg from "./static/images/cards/doc.jpg"
-
-function DocList({myDocs,title,handleDelete}) {
+import docImg1 from "./static/images/cards/doc1.jpg"
+import docImg2 from "./static/images/cards/doc2.jpg"
+const docImgArray = [docImg, docImg1, docImg2];
+function DocList({myDocs,handleDelete}) {
   return (
     <div className='doc-list'>
         {myDocs.map((doc) => (
-        <div className="doc-preview" key={doc.id}>
-          <h2>{doc.title}</h2>
-          <p>{doc.author}</p>
-          <button onClick={() => handleDelete(doc.id)}>Delete</button>
-        </div>
-      ))}
-
-
-<Card sx={{ maxWidth: 345 }}>
-      <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
-      />
-      <CardMedia
-        component="img"
-        height="194"
-        image={docImg}
-        alt="Paella dish"
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-      </CardActions>
-    </Card>
+          
+            <Card sx={{ maxWidth: 345 }} className = 'doc-preview' style={{ backgroundColor: 'lightblue' }} key={doc.id}>
+              <CardHeader title={doc.title}/>{doc.specialty}<CardMedia
+                component="img"
+                height="194"
+                image={docImgArray[2]}
+                alt="Doctor image"
+              />
+              <CardContent>
+                <Typography variant="body2" color="text.secondary">
+                  Doctor with massive experience
+                </Typography>
+              </CardContent>
+              <CardActions disableSpacing>
+                <IconButton aria-label="add to favorites">
+                <button onClick={() => handleDelete(doc.id)}>Delete</button>
+                </IconButton>
+                <IconButton aria-label="share">
+                  <ShareIcon />
+                </IconButton>
+              </CardActions>
+            </Card>
+            
+        // <div className="doc-preview" key={doc.id}>
+        //   <h2>{doc.title}</h2>
+        //   <p>{doc.specialty}</p>
+        //   <button onClick={() => handleDelete(doc.id)}>Delete</button>
+        // </div>
+        ))}
     </div>
+    
   )
 }
 

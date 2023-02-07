@@ -33,3 +33,11 @@ a:hover {
   margin: 40px auto;
   padding: 20px;
 }
+
+.doc-preview {
+  display: inline-block;
+  margin-right: 20px;
+  width: calc(33.33% - 20px);
+}
+
+

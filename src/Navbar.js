@@ -16,7 +16,6 @@
 //   )
 // }
 // export default Navbar
-
 import React from 'react'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -25,6 +24,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/material/Menu';
+import { Link } from 'react-router-dom';
 // 
 function Navbar() {
   return (
@@ -46,18 +46,19 @@ function Navbar() {
                     </Typography>
                     <Typography>
                     <div className="links">
-                        <a href="/">Home</a>
-                        <a href="/create" style={{
-                            color:"white",
-                            backgroundColor:'blue',
-                            borderRadius:"8px"
-                        }}>Appointments</a>
+                        <Link to='/'>Home</Link>
+                        <Link to="/appointments" style={{
+                        color:"white",
+                        backgroundColor:'blue',
+                        borderRadius:"8px"
+                        }}>Appointments</Link>
                     </div>
                     </Typography>
-                    <Button color="inherit">Login</Button>
+                   <Link to ='/login'><Button color="inherit">Login</Button></Link>
                 </Toolbar>
             </AppBar>
         </Box>
+
     </div>
   )
 }
