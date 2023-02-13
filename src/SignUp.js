@@ -1,3 +1,4 @@
+import Axios from 'axios'
 import React from 'react'
 // import Login from './Login'
 import { useState } from 'react';
@@ -33,8 +34,16 @@ function SignUp() {
       navigate('/');
       }
     };
+    const register = ()=>{
+      Axios.post('http://localhost/5000/register',
+      {username:username,
+      password:password
+      }).then((response)=>{
+        console.log(response);
+      })   
+    }
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} action='instert.php' method='post'>
         <FormControl fullWidth margin="normal">
         <InputLabel htmlFor="username">Username</InputLabel>
         <Input
@@ -65,6 +74,7 @@ function SignUp() {
         {confirmPasswordError && <FormHelperText error>{confirmPasswordError}</FormHelperText>}
         </FormControl>
         <Button
+        onClick={register}
         type="submit"
         fullWidth
         variant="contained"

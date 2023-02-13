@@ -5,8 +5,10 @@ import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 import Appointments from "./Appointments";
 import SignUp from "./SignUp";
 
+
 function App() {
   return (
+    
     <Router>
       <div className="App">
         <Navbar/>

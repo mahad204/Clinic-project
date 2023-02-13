@@ -3,10 +3,10 @@ import {  Card, CardActions, CardContent, CardHeader, CardMedia, IconButton, Typ
 import ShareIcon from '@mui/icons-material/Share';
 import React from 'react'
 
-import docImg from "./static/images/cards/doc.jpg"
-import docImg1 from "./static/images/cards/doc1.jpg"
-import docImg2 from "./static/images/cards/doc2.jpg"
-const docImgArray = [docImg, docImg1, docImg2];
+// import docImg from "./static/images/cards/doc.jpg"
+// import docImg1 from "./static/images/cards/doc1.jpg"
+// import docImg2 from "./static/images/cards/doc2.jpg"
+// const docImgArray = [docImg, docImg1, docImg2];
 function DocList({myDocs,handleDelete}) {
   return (
     <div className='doc-list'>
@@ -16,7 +16,7 @@ function DocList({myDocs,handleDelete}) {
               <CardHeader title={doc.title}/>{doc.specialty}<CardMedia
                 component="img"
                 height="194"
-                image={docImgArray[2]}
+                image={doc.image}
                 alt="Doctor image"
               />
               <CardContent>
